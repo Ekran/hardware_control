@@ -1,1 +1,0 @@
-# Ansteuerung unter python
