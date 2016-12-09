@@ -36,12 +36,6 @@ def EA__fill_zeros(out_frame):
     out_frame = out_frame + '0' * (2*25-len(out_frame))    # Frame auf 25 bytes (50Zeichen = 2/Byte in Hex-Darstellung) verlaengern
     return out_frame
 
-
-def EA__checksum_org(out_frame):
-    checksum = sum(ord(i) for i in str(binascii.unhexlify(out_frame)))
-    out_frame = out_frame + binascii.hexlify(chr(checksum & 0xff))
-    return out_frame
-
 def EA__checksum(out_frame):
     if(sys.version_info > (3,0,0)):
         #print("Version 3") # binascii.hexlify liefert bytes()
@@ -56,7 +50,7 @@ def EA__checksum(out_frame):
         #print(crc)
         out_frame = out_frame + crc
     else:
-        print("Version 2") # binascii.hexlify liefert str()
+        #print("Version 2") # binascii.hexlify liefert str()
         checksum = sum(ord(i) for i in str(binascii.unhexlify(out_frame)))
         out_frame = out_frame + binascii.hexlify(chr(checksum & 0xff))
     return out_frame
