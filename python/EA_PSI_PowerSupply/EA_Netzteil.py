@@ -1,3 +1,4 @@
+# This Python file uses the following encoding: utf-8
 # Erstellt von Egmont Schreiter @ Hochschule Zittau/Görlitz
 # 2016-12-09
 # https://www.hszg.de/f-ei/fakultaet/mitarbeiter/egmont-schreiter.html
